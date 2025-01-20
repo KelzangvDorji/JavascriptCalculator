@@ -1,22 +1,113 @@
-#calculator {
-  width: 200px;
-  margin: 0 auto;
-  padding: 10px;
-  text-align: center;
-  border: 2px solid black;
+/* General body styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
+/* Calculator container */
+#calculator {
+  width: 100%;
+  max-width: 350px;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Result display */
 #result {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  font-size: 20px;
+  padding: 15px;
+  font-size: 2em; /* Proportional text size */
+  text-align: right;
+  border: none;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+  color: #333;
+  margin-bottom: 20px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Button container */
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Equal column width */
+  gap: 15px;
+  width: 100%;
+  padding-top: 20px;
+}
+
+/* Individual buttons */
 button {
-  width: 40px;
-  height: 40px;
-  margin: 5px;
-  font-size: 18px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1.5em; /* Proportional font size */
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Button hover effect */
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
+/* Special color for operation buttons */
+button:nth-child(4), button:nth-child(8), button:nth-child(12), button:nth-child(16) {
+  background-color: #f39c12;
+}
+
+button:nth-child(4):hover, button:nth-child(8):hover, button:nth-child(12):hover, button:nth-child(16):hover {
+  background-color: #e67e22;
+}
+
+/* Color for 'C' button (clear button) */
+button:nth-child(14) {
+  background-color: #e74c3c;
+}
+
+button:nth-child(14):hover {
+  background-color: #c0392b;
+}
+
+/* Color for '=' button (equal button) */
+button:nth-child(15) {
+  background-color: #3498db;
+}
+
+button:nth-child(15):hover {
+  background-color: #2980b9;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 400px) {
+  #calculator {
+    width: 100%;
+    padding: 15px;
+  }
+
+  #result {
+    font-size: 1.8em; /* Slightly smaller on smaller screens */
+  }
+
+  button {
+    font-size: 1.2em; /* Smaller buttons on small screens */
+    padding: 15px;
+  }
+}
